@@ -113,6 +113,10 @@
     self.animationImages = images;
     self.animationRepeatCount = _loop ? 0 : 1;
     [self startAnimating];
+
+    if(_onImagesLoadEnd) {
+        _onImagesLoadEnd(nil);
+    }
 }
 
 - (void)setFramesPerSecond:(NSUInteger)framesPerSecond {

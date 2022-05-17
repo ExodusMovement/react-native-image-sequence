@@ -14,6 +14,7 @@ interface ImageSequenceProps extends ViewProps {
     downsampleWidth?: number;
     /** The height to use for optional downsampling. Both `downsampleWidth` and `downsampleHeight` must be set to a positive number to enable downsampling. Default: -1 */
     downsampleHeight?: number;
+    onImagesLoadEnd?: () => void;
 }
 
 declare class ImageSequence extends Component<ImageSequenceProps> {

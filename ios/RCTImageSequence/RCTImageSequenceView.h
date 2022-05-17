@@ -3,9 +3,11 @@
 // Copyright (c) 2016 Facebook. All rights reserved.
 //
 
+#import <React/RCTComponent.h>
 #import <UIKit/UIKit.h>
 
 @interface RCTImageSequenceView : UIImageView
 
+@property (nonatomic, copy) RCTDirectEventBlock onImagesLoadEnd;
 
 @end

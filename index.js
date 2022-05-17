@@ -3,7 +3,7 @@ import {
   requireNativeComponent,
   ViewPropTypes
 } from 'react-native';
-import { bool, string, number, array, shape, arrayOf } from 'prop-types';
+import { bool, string, number, array, shape, arrayOf, func } from 'prop-types';
 import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
 
 class ImageSequence extends Component {
@@ -44,7 +44,8 @@ ImageSequence.propTypes = {
   framesPerSecond: number,
   loop: bool,
   downsampleWidth: number,
-  downsampleHeight: number
+  downsampleHeight: number,
+  onImagesLoadEnd: func
 };
 
 const RCTImageSequence = requireNativeComponent('RCTImageSequence', {
@@ -56,7 +57,8 @@ const RCTImageSequence = requireNativeComponent('RCTImageSequence', {
     framesPerSecond: number,
     loop: bool,
     downsampleWidth: number,
-    downsampleHeight: number
+    downsampleHeight: number,
+    onImagesLoadEnd: func
   },
 });
 

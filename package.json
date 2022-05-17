@@ -1,10 +1,10 @@
 {
-  "name": "react-native-image-sequence-2",
+  "name": "@exodus/react-native-image-sequence-2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bwindsor/react-native-image-sequence.git"
+    "url": "https://github.com/ExodusMovement/react-native-image-sequence.git"
   },
-  "version": "0.8.1",
+  "version": "0.8.1@exodus-1",
   "description": "A <ImageSequence> component for react-native",
   "peerDependencies": {
     "react-native": ">=0.47.0",

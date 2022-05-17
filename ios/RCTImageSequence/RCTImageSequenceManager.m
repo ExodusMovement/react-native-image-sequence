@@ -15,6 +15,7 @@ RCT_EXPORT_VIEW_PROPERTY(framesPerSecond, NSUInteger);
 RCT_EXPORT_VIEW_PROPERTY(loop, BOOL);
 RCT_EXPORT_VIEW_PROPERTY(downsampleWidth, NSInteger);
 RCT_EXPORT_VIEW_PROPERTY(downsampleHeight, NSInteger);
+RCT_EXPORT_VIEW_PROPERTY(onImagesLoadEnd, RCTDirectEventBlock)
 
 - (UIView *)view {
     return [RCTImageSequenceView new];
