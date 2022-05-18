@@ -4,7 +4,7 @@
     "type": "git",
     "url": "https://github.com/ExodusMovement/react-native-image-sequence.git"
   },
-  "version": "0.8.1-exodus.5",
+  "version": "0.8.1-exodus.6",
   "description": "A <ImageSequence> component for react-native",
   "peerDependencies": {
     "react-native": ">=0.47.0",
