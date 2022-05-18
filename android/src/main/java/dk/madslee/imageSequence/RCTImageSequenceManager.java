@@ -5,9 +5,12 @@ import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.uimanager.SimpleViewManager;
 import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
+import com.facebook.react.common.MapBuilder;
 
 import java.util.ArrayList;
+import java.util.Map;
 
+import javax.annotation.Nullable;
 
 public class RCTImageSequenceManager extends SimpleViewManager<RCTImageSequenceView> {
     @Override
@@ -19,6 +22,8 @@ public class RCTImageSequenceManager extends SimpleViewManager<RCTImageSequenceV
     protected RCTImageSequenceView createViewInstance(ThemedReactContext reactContext) {
         return new RCTImageSequenceView(reactContext);
     }
+
+
 
     /**
      * sets the speed of the animation.
@@ -85,5 +90,17 @@ public class RCTImageSequenceManager extends SimpleViewManager<RCTImageSequenceV
     @ReactProp(name = "downsampleHeight")
     public void setDownsampleHeight(final RCTImageSequenceView view, Integer downsampleHeight) {
         view.setDownsampleHeight(downsampleHeight);
+    }
+
+    @Nullable
+    @Override
+    public Map getExportedCustomBubblingEventTypeConstants() {
+        return MapBuilder.builder()
+            .put(
+                    "onImagesLoadEnd",
+                    MapBuilder.of(
+                            "phasedRegistrationNames",
+                            MapBuilder.of("bubbled", "onImagesLoadEnd")))
+            .build();
     }
 }

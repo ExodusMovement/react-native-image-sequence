@@ -20,6 +20,11 @@ import java.util.ArrayList;
 import java.util.concurrent.RejectedExecutionException;
 import androidx.appcompat.widget.AppCompatImageView;
 
+import com.facebook.react.bridge.Arguments;
+import com.facebook.react.bridge.ReactContext;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.uimanager.events.RCTEventEmitter;
+
 
 public class RCTImageSequenceView extends AppCompatImageView {
     private static final String TAG = RCTImageSequenceView.class.getName();
@@ -118,6 +123,15 @@ public class RCTImageSequenceView extends AppCompatImageView {
                 onTaskCompleted(this, index, bitmap);
             }
         }
+    }
+
+    public void onImagesLoadEnd() {
+      WritableMap event = Arguments.createMap();
+      ReactContext reactContext = (ReactContext)getContext();
+      reactContext.getJSModule(RCTEventEmitter.class).receiveEvent(
+              getId(),
+              "onImagesLoadEnd",
+              event);
     }
 
     private void onTaskCompleted(DownloadImageTask downloadImageTask, Integer index, Bitmap bitmap) {
@@ -258,6 +272,9 @@ public class RCTImageSequenceView extends AppCompatImageView {
         animationDrawable.setOneShot(!this.loop);
 
         this.setImageDrawable(animationDrawable);
+
+        onImagesLoadEnd();
+
         if (this.animate) {
             animationDrawable.start();
         }
