@@ -6,6 +6,15 @@
   },
   "version": "0.8.1-exodus.6",
   "description": "A <ImageSequence> component for react-native",
+  "files": [
+    "ios/",
+    "android/src/",
+    "android/build.gradle",
+    "index.js",
+    "README.md",
+    "package.json",
+    "LICENSE"
+  ],
   "peerDependencies": {
     "react-native": ">=0.47.0",
     "prop-types": ">=15.5.0"
