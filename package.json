@@ -13,6 +13,7 @@
     "index.js",
     "README.md",
     "package.json",
+    "react-native-image-sequence.podspec",
     "LICENSE"
   ],
   "peerDependencies": {
